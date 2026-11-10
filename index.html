@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fewa Restaurant · Meniu</title>
+<meta name="description" content="Meniul Fewa Restaurant — bucătărie indiană și nepaleză. Indian &amp; Nepalese cuisine menu.">
+<meta name="theme-color" content="#FBF6EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141010" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Fewa Restaurant · Meniu">
+<meta property="og:description" content="Bucătărie indiană și nepaleză · Indian &amp; Nepalese cuisine">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23A32638'/%3E%3Ctext x='50' y='70' font-size='56' font-family='Georgia,serif' fill='%23FBF6EE' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF6EE; --surface:#FFFFFF; --surface-2:#F4ECE0;
+  --ink:#241812; --ink-2:#4A382C; --muted:#7D6B5D;
+  --line:rgba(36,24,18,.10); --line-2:rgba(36,24,18,.06);
+  --crimson:#A32638; --saffron:#C9761B;
+  --veg:#2F7A43; --egg:#A8791A; --meat:#A32638;
+  --shadow:0 1px 2px rgba(36,24,18,.05),0 8px 24px rgba(36,24,18,.06);
+  --radius:16px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141010; --surface:#1D1715; --surface-2:#262020;
+    --ink:#F4EADC; --ink-2:#D8C9B8; --muted:#A3907F;
+    --line:rgba(244,234,220,.13); --line-2:rgba(244,234,220,.07);
+    --crimson:#E4687A; --saffron:#E8A24C;
+    --veg:#6DC487; --egg:#E0B55A; --meat:#E4687A;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141010; --surface:#1D1715; --surface-2:#262020;
+  --ink:#F4EADC; --ink-2:#D8C9B8; --muted:#A3907F;
+  --line:rgba(244,234,220,.13); --line-2:rgba(244,234,220,.07);
+  --crimson:#E4687A; --saffron:#E8A24C;
+  --veg:#6DC487; --egg:#E0B55A; --meat:#E4687A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:150px}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px; margin:0 auto; padding:0 16px}
+
+/* hero */
+.hero{
+  position:relative; text-align:center; padding:40px 16px 30px;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(201,118,27,.14) 0%, transparent 62%),
+    linear-gradient(180deg, rgba(163,38,56,.07), transparent 70%);
+  border-bottom:1px solid var(--line);
+}
+.peaks{display:block; margin:0 auto 14px; width:84px; height:34px; color:var(--saffron)}
+.hero h1{
+  font-family:Fraunces,Georgia,serif; font-weight:700; margin:0;
+  font-size:clamp(38px,13vw,62px); letter-spacing:.14em; line-height:1;
+  color:var(--crimson); text-indent:.14em;
+}
+.hero .sub1{
+  font-size:clamp(10px,3.1vw,13px); letter-spacing:.44em; text-indent:.44em;
+  margin:10px 0 0; color:var(--ink-2); font-weight:600; text-transform:uppercase;
+}
+.rule{display:flex; align-items:center; justify-content:center; gap:10px; margin:16px auto 0; max-width:300px}
+.rule i{flex:1; height:1px; background:var(--line); display:block}
+.rule b{width:6px; height:6px; border-radius:50%; background:var(--saffron); flex:none}
+.hero .sub2{margin:14px 0 0; font-family:Fraunces,Georgia,serif; font-size:17px; color:var(--ink-2)}
+.hero .sub3{margin:3px 0 0; font-size:12px; color:var(--muted); letter-spacing:.12em}
+
+/* sticky toolbar */
+.bar{
+  position:sticky; top:0; z-index:40; background:var(--bg);
+  border-bottom:1px solid var(--line);
+}
+@supports (backdrop-filter:blur(1px)){
+  .bar{background:rgba(251,246,238,.86); backdrop-filter:saturate(180%) blur(14px); -webkit-backdrop-filter:saturate(180%) blur(14px)}
+  :root[data-theme="dark"] .bar{background:rgba(20,16,16,.86)}
+}
+@media (prefers-color-scheme:dark){
+  @supports (backdrop-filter:blur(1px)){
+    :root:not([data-theme="light"]) .bar{background:rgba(20,16,16,.86)}
+  }
+}
+.bar-top{display:flex; gap:8px; align-items:center; padding:10px 16px; max-width:720px; margin:0 auto}
+.search{position:relative; flex:1; min-width:0}
+.search > svg{position:absolute; left:12px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--muted); pointer-events:none}
+.search input{
+  width:100%; border:1px solid var(--line); background:var(--surface); color:var(--ink);
+  border-radius:999px; padding:9px 34px 9px 35px; font:inherit; font-size:15px; outline:none;
+  -webkit-appearance:none; appearance:none;
+}
+.search input::-webkit-search-cancel-button{display:none}
+.search input:focus{border-color:var(--saffron); box-shadow:0 0 0 3px rgba(201,118,27,.2)}
+.search .clr{
+  position:absolute; right:5px; top:50%; transform:translateY(-50%); border:0; background:transparent;
+  color:var(--muted); font-size:20px; line-height:1; cursor:pointer; padding:4px 8px; border-radius:50%; display:none;
+}
+.search.has .clr{display:block}
+.iconbtn{
+  flex:none; display:inline-flex; align-items:center; justify-content:center;
+  height:38px; min-width:38px; padding:0 11px; border-radius:999px;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink-2);
+  font:inherit; font-size:12.5px; font-weight:600; cursor:pointer; letter-spacing:.04em;
+}
+.iconbtn svg{width:17px; height:17px}
+#lang{gap:4px; padding:0 12px}
+#lang b{font-weight:700; color:var(--ink)}
+#lang i{font-style:normal; opacity:.35}
+#lang s{text-decoration:none; opacity:.45; font-weight:500}
+
+.chips{display:flex; gap:7px; overflow-x:auto; padding:0 16px 9px; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:none; border:1px solid var(--line); background:var(--surface); color:var(--ink-2);
+  border-radius:999px; padding:6px 13px; font-size:13px; font-weight:500; cursor:pointer;
+  white-space:nowrap; font-family:inherit; display:inline-flex; align-items:center; gap:6px;
+}
+.chip .dot{width:7px; height:7px; border-radius:50%; background:currentColor; flex:none}
+.chip[aria-pressed="true"], .chip.on{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.chip[data-diet="veg"]{color:var(--veg)}
+.chip[data-diet="egg"]{color:var(--egg)}
+.chip[data-diet="meat"]{color:var(--meat)}
+.chip[data-diet][aria-pressed="true"]{color:var(--bg)}
+.navchips{border-top:1px solid var(--line-2); padding-top:9px}
+
+/* sections */
+main{padding:24px 0 70px}
+.sec{margin:0 0 36px; scroll-margin-top:154px}
+.sec-head{text-align:center; margin:0 0 16px}
+.sec-head h2{
+  font-family:Fraunces,Georgia,serif; font-size:27px; font-weight:600; margin:0;
+  color:var(--ink); letter-spacing:-.01em;
+}
+.sec-head p{margin:5px 0 0; font-size:12.5px; color:var(--muted); letter-spacing:.05em}
+.sec-head .rule{margin-top:12px; max-width:150px}
+
+.group{
+  font-size:10.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--saffron); margin:26px 0 11px; text-align:center;
+}
+.list{display:flex; flex-direction:column; gap:10px}
+.item{
+  background:var(--surface); border:1px solid var(--line-2); border-radius:var(--radius);
+  padding:13px 15px; box-shadow:var(--shadow);
+}
+.item-top{display:flex; align-items:baseline; gap:9px}
+.item.has-img{padding:11px 13px}
+.item.has-img .item-top{align-items:flex-start}
+.item.has-img .desc{padding-left:65px}
+
+/* thumbnail */
+.thumb{
+  flex:none; width:56px; height:56px; border-radius:11px; padding:0; margin:0;
+  border:1px solid var(--line-2); background:var(--surface-2); overflow:hidden;
+  position:relative; cursor:zoom-in; display:block; -webkit-tap-highlight-color:transparent;
+}
+.thumb img{width:100%; height:100%; object-fit:cover; display:block}
+.thumb::after{
+  content:""; position:absolute; right:3px; bottom:3px; width:11px; height:11px;
+  border-radius:3px; background:var(--surface); border:1.5px solid currentColor;
+  box-shadow:0 0 0 1.5px var(--surface);
+}
+.thumb::before{
+  content:""; position:absolute; right:6.2px; bottom:6.2px; width:4.6px; height:4.6px;
+  border-radius:50%; background:currentColor; z-index:1;
+}
+.thumb[data-t="veg"]{color:var(--veg)}
+.thumb[data-t="egg"]{color:var(--egg)}
+.thumb[data-t="meat"]{color:var(--meat)}
+.thumb:active{transform:scale(.97)}
+
+/* preview */
+.lb{
+  position:fixed; inset:0; z-index:100; display:none;
+  background:rgba(18,12,10,.93); padding:16px;
+  padding-bottom:calc(16px + env(safe-area-inset-bottom));
+  align-items:center; justify-content:center;
+}
+.lb.open{display:flex}
+.lb-box{max-width:520px; width:100%; max-height:100%; display:flex; flex-direction:column; gap:14px}
+.lb-img{min-height:0; border-radius:16px; overflow:hidden; background:#241812; display:block}
+.lb-img img{
+  display:block; margin:0 auto; width:auto; height:auto;
+  max-width:100%; max-height:62vh;
+}
+.lb-cap{color:#F4EADC; text-align:center; flex:none}
+.lb-cap h4{
+  margin:0; font-family:Fraunces,Georgia,serif; font-size:21px; font-weight:600;
+  display:flex; align-items:baseline; justify-content:center; gap:9px; flex-wrap:wrap;
+}
+.lb-cap h4 span{font-family:Inter,sans-serif; font-size:12.5px; font-weight:400; opacity:.6}
+.lb-cap .lb-price{color:#E4687A; font-family:Fraunces,Georgia,serif; font-size:19px; font-weight:600}
+.lb-cap p{margin:7px auto 0; font-size:13.5px; line-height:1.5; color:#C3B2A2; max-width:420px}
+.lb-close{
+  position:fixed; top:calc(12px + env(safe-area-inset-top)); right:12px; z-index:101;
+  width:42px; height:42px; border-radius:50%; border:0; cursor:pointer;
+  background:rgba(255,255,255,.14); color:#F4EADC; display:grid; place-items:center;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+}
+.lb-close svg{width:21px; height:21px}
+body.lb-on{overflow:hidden}
+.item-name{font-weight:600; font-size:16px; color:var(--ink); flex:1; min-width:0; margin:0; letter-spacing:-.005em}
+.item-name .portion{font-weight:400; font-size:12.5px; color:var(--muted); white-space:nowrap}
+.tagdot{
+  flex:none; width:13px; height:13px; border-radius:3px; border:1.5px solid currentColor;
+  display:inline-grid; place-items:center; position:relative; top:1px;
+}
+.tagdot::after{content:""; width:5px; height:5px; border-radius:50%; background:currentColor}
+.tagdot[data-t="veg"]{color:var(--veg)}
+.tagdot[data-t="egg"]{color:var(--egg)}
+.tagdot[data-t="meat"]{color:var(--meat)}
+.price{
+  flex:none; font-family:Fraunces,Georgia,serif; font-weight:600; font-size:16.5px;
+  color:var(--crimson); font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.price small{font-size:11px; font-weight:400; color:var(--muted); font-family:Inter,sans-serif; margin-left:3px}
+.desc{margin:6px 0 0; font-size:13.5px; line-height:1.48; color:var(--muted)}
+mark{background:rgba(201,118,27,.3); color:inherit; border-radius:3px; padding:0 1px}
+
+/* spirits table */
+.tablewrap{
+  overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--line-2);
+  border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow);
+}
+table{border-collapse:collapse; width:100%; min-width:540px; font-size:14px}
+th,td{padding:10px 12px; text-align:right; white-space:nowrap; border-bottom:1px solid var(--line-2)}
+th:first-child,td:first-child{text-align:left; position:sticky; left:0; background:var(--surface)}
+thead th{font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:600}
+tbody td{font-variant-numeric:tabular-nums; color:var(--ink-2)}
+tbody td:first-child{font-weight:500; color:var(--ink)}
+tr.grouprow td{
+  background:var(--surface-2); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--saffron); font-weight:600; text-align:left;
+}
+tbody tr:last-child td{border-bottom:0}
+
+/* misc */
+.empty{text-align:center; padding:70px 20px; color:var(--muted)}
+.empty strong{display:block; font-family:Fraunces,Georgia,serif; font-size:20px; color:var(--ink); margin-bottom:6px}
+footer{border-top:1px solid var(--line); padding:32px 16px 48px; text-align:center}
+footer .peaks{width:62px; height:26px; margin-bottom:10px}
+.fname{font-family:Fraunces,Georgia,serif; letter-spacing:.2em; font-size:15px; color:var(--crimson); font-weight:600}
+footer p{margin:7px auto 0; font-size:12.5px; color:var(--muted); max-width:380px}
+.pdf{
+  display:inline-flex; align-items:center; gap:7px; margin-top:18px; text-decoration:none;
+  border:1px solid var(--line); border-radius:999px; padding:9px 17px;
+  color:var(--ink-2); font-size:13.5px; font-weight:500; background:var(--surface);
+}
+.pdf svg{width:15px; height:15px}
+.top{
+  position:fixed; right:14px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:50;
+  width:44px; height:44px; border-radius:50%; border:1px solid var(--line);
+  background:var(--surface); color:var(--ink); box-shadow:var(--shadow); cursor:pointer;
+  display:grid; place-items:center; opacity:0; pointer-events:none; transition:opacity .18s;
+}
+.top.show{opacity:1; pointer-events:auto}
+.top svg{width:19px; height:19px}
+@media (min-width:640px){
+  .list{display:grid; grid-template-columns:1fr 1fr; gap:11px}
+  html{scroll-padding-top:158px}
+  .lb-img img{max-height:60vh}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} .top{transition:none}}
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0" aria-hidden="true"><symbol id="peaks" viewBox="0 0 120 48"><path d="M2 46 L30 10 L44 28 L60 4 L80 32 L94 18 L118 46" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></symbol></svg>
+
+<header class="hero">
+  <svg class="peaks" aria-hidden="true"><use href="#peaks"/></svg>
+  <h1>FEWA</h1>
+  <p class="sub1">Restaurant</p>
+  <div class="rule"><i></i><b></b><i></i></div>
+  <p class="sub2" data-ro="Bucătărie Indiană &amp; Nepaleză" data-en="Indian &amp; Nepalese Cuisine">Bucătărie Indiană &amp; Nepaleză</p>
+  <p class="sub3" data-ro="MÂNCARE &amp; BĂUTURI" data-en="FOOD &amp; DRINKS">MÂNCARE &amp; BĂUTURI</p>
+</header>
+
+<div class="bar">
+  <div class="bar-top">
+    <div class="search" id="searchWrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" autocomplete="off" enterkeyhint="search" aria-label="Search menu">
+      <button class="clr" id="clr" type="button" aria-label="Clear search">&times;</button>
+    </div>
+    <button class="iconbtn" id="lang" type="button" aria-label="Română / English"><b>RO</b><i>·</i><s>EN</s></button>
+    <button class="iconbtn" id="theme" type="button" aria-label="Switch theme">
+      <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"></svg>
+    </button>
+  </div>
+  <div class="chips" id="dietChips"></div>
+  <div class="chips navchips" id="navChips"></div>
+</div>
+
+<main class="wrap" id="main"></main>
+
+<footer>
+  <svg class="peaks" aria-hidden="true"><use href="#peaks"/></svg>
+  <div class="fname">FEWA RESTAURANT SRL</div>
+  <p data-ro="Bucătărie Indiană &amp; Nepaleză" data-en="Indian &amp; Nepalese Cuisine">Bucătărie Indiană &amp; Nepaleză</p>
+  <p data-ro="Prețurile sunt în lei (RON). Vă rugăm să anunțați personalul despre orice alergie." data-en="Prices are in lei (RON). Please tell our staff about any allergies.">Prețurile sunt în lei (RON). Vă rugăm să anunțați personalul despre orice alergie.</p>
+  <a class="pdf" href="Fewa_Menu_Food_and_Drinks.pdf" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+    <span data-ro="Meniu complet (PDF)" data-en="Full menu (PDF)">Meniu complet (PDF)</span>
+  </a>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <div class="lb-box">
+    <div class="lb-img"><img id="lbImg" alt=""></div>
+    <div class="lb-cap">
+      <h4><span id="lbPortion"></span><em id="lbName" style="font-style:normal"></em><span class="lb-price" id="lbPrice"></span></h4>
+      <p id="lbDesc"></p>
+    </div>
+  </div>
+</div>
+
+<button class="top" id="top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 6-6 6 6"/></svg></button>
+
+<script id="menu-data" type="application/json">[{"title":"Starters","subtitle":"Aperitive","items":[{"name":"Papadums","portion":"2 buc / pcs","price":10,"ro":"Făină de linte, Sare, Piper, Ulei","en":"Lentil flour, Salt, Pepper, Oil","slug":"starters--papadums","tag":"veg"},{"name":"Masala Papadums","portion":"2 buc / pcs","price":13,"ro":"Făină de linte, Sare, Piper, Ulei, Castraveți, Roșii, Ceapă, Chaat masala","en":"Lentil flour, Salt, Pepper, Oil, Cucumber, Tomato, Onion, Chaat masala","slug":"starters--masala-papadums","tag":"veg"},{"name":"Vegetable Samosa","portion":"2 buc / pcs","price":25,"ro":"Făină albă, Chimion, Cartofi, Mazăre, Ghimbir, Ardei iute, Ceapă, Condimente","en":"White flour, Cumin, Potato, Peas, Ginger, Chilli, Onion, Spices","slug":"starters--vegetable-samosa","tag":"veg","img":"starters--vegetable-samosa.jpg"},{"name":"Onion Pakoda","portion":"6 buc / pcs","price":20,"ro":"Făină de năut, Ceapă, Făină albă, Ardei iute, Condimente","en":"Chickpea flour, Onion, White flour, Chilli, Spices","slug":"starters--onion-pakoda","tag":"veg"},{"name":"Veg Pakoda","portion":"6 buc / pcs","price":23,"ro":"Legume asortate (ceapă, cartofi, spanac, conopidă) în aluat de făină de năut, prăjite crocant, Condimente","en":"Mixed vegetables (onion, potato, spinach, cauliflower) in chickpea-flour batter, fried crispy, Spices","slug":"starters--veg-pakoda","tag":"veg","img":"starters--veg-pakoda.jpg"},{"name":"Aloo Chop","portion":"6 buc / pcs","price":23,"ro":"Piure de cartofi condimentat cu ghimbir, usturoi și coriandru verde, în aluat de făină de năut, prăjit","en":"Spiced mashed potato with ginger, garlic and fresh coriander, in chickpea-flour batter, fried","slug":"starters--aloo-chop","tag":"veg"},{"name":"Chatpate","portion":"200 gr","price":30,"ro":"Tăiței crocanți, Orez expandat, Roșii, Cartofi, Castraveți, Lămâie, Ardei iute, Ulei de muștar, Condimente","en":"Crispy noodles, Puffed rice, Tomato, Potato, Cucumber, Lemon, Chilli, Mustard oil, Spices","slug":"starters--chatpate","tag":"veg"},{"name":"Samosa Chaat","portion":"2 buc / pcs","price":30,"ro":"Samosa sparte, Năut, Iaurt, Chutney de tamarind și mentă, Ceapă, Chaat masala","en":"Crushed samosa, Chickpeas, Yogurt, Tamarind & mint chutney, Onion, Chaat masala","slug":"starters--samosa-chaat","tag":"veg"}],"id":"starters"},{"title":"Eggs","subtitle":"Preparate din ouă · Egg dishes","items":[{"name":"Plain Omelette","portion":"2 ouă / eggs","price":11,"ro":"Ouă, Sare, Piper, Ulei","en":"Eggs, Salt, Pepper, Oil","slug":"eggs--plain-omelette","tag":"egg"},{"name":"Masala Omelette","portion":"2 ouă / eggs","price":19,"ro":"Ouă, Ceapă, Roșii, Ardei iute, Coriandru verde, Condimente","en":"Eggs, Onion, Tomato, Chilli, Fresh coriander, Spices","slug":"eggs--masala-omelette","tag":"egg"},{"name":"Boiled Egg","portion":"2 buc / pcs","price":20,"ro":"Ouă fierte, Sare, Piper","en":"Boiled eggs, Salt, Pepper","slug":"eggs--boiled-egg","tag":"egg"},{"name":"Scrambled Eggs","portion":"170 gr","price":25,"ro":"Ouă, Unt, Sare, Piper","en":"Eggs, Butter, Salt, Pepper","slug":"eggs--scrambled-eggs","tag":"egg","img":"eggs--scrambled-eggs.jpg"},{"name":"Boiled Fry Egg","portion":"2 buc / pcs","price":25,"ro":"Ouă fierte, apoi prăjite ușor cu Ceapă, Ardei iute, Condimente","en":"Boiled eggs, then lightly fried with Onion, Chilli, Spices","slug":"eggs--boiled-fry-egg","tag":"egg"},{"name":"Egg Curry","portion":"2 buc / pcs","price":30,"ro":"Ouă fierte în sos de Roșii, Ceapă, Usturoi, Ghimbir, Masala","en":"Boiled eggs in a gravy of Tomato, Onion, Garlic, Ginger, Masala","slug":"eggs--egg-curry","tag":"egg","img":"eggs--egg-curry.jpg"}],"id":"eggs"},{"title":"Soups","subtitle":"Supe","items":[{"name":"Daal Soup","portion":"300 gr","price":20,"ro":"Linte, Ceapă, Morcov, Ardei iute, Usturoi, Condimente","en":"Lentils, Onion, Carrot, Chilli, Garlic, Spices","slug":"soups--daal-soup","tag":"veg","img":"soups--daal-soup.jpg"},{"name":"Chicken Soup","portion":"300 gr","price":22,"ro":"Pulpă de pui, Ghimbir, Ceapă, Ardei iute, Condimente, Sos de soia, Roșii","en":"Chicken thigh, Ginger, Onion, Chilli, Spices, Soy sauce, Tomato","slug":"soups--chicken-soup","tag":"meat","img":"soups--chicken-soup.jpg"},{"name":"Veg Hot & Sour Soup","portion":"300 gr","price":23,"ro":"Varză, Morcov, Ciuperci, Ardei gras, Sos de soia, Oțet, Ardei iute, Piper, Amidon","en":"Cabbage, Carrot, Mushrooms, Bell pepper, Soy sauce, Vinegar, Chilli, Pepper, Cornflour","slug":"soups--veg-hot-sour-soup","tag":"veg"},{"name":"Chicken Hot & Sour Soup","portion":"300 gr","price":28,"ro":"Pui, Ou, Varză, Morcov, Ciuperci, Sos de soia, Oțet, Ardei iute, Piper, Amidon","en":"Chicken, Egg, Cabbage, Carrot, Mushrooms, Soy sauce, Vinegar, Chilli, Pepper, Cornflour","slug":"soups--chicken-hot-sour-soup","tag":"meat"},{"name":"Mushroom Soup","portion":"300 gr","price":25,"ro":"Ciuperci, Ceapă, Usturoi, Unt, Smântână, Condimente","en":"Mushrooms, Onion, Garlic, Butter, Cream, Spices","slug":"soups--mushroom-soup","tag":"veg","img":"soups--mushroom-soup.jpg"}],"id":"soups"},{"title":"Thukpa","subtitle":"Supă nepaleză cu tăiței · Nepali noodle soup","items":[{"name":"Vegetarian Thukpa","portion":"300 gr","price":30,"ro":"Tăiței, Roșii, Ardei verde, Ghimbir, Usturoi, Ceapă, Morcov, Sos de soia, Mazăre, Condimente","en":"Noodles, Tomato, Green pepper, Ginger, Garlic, Onion, Carrot, Soy sauce, Peas, Spices","slug":"thukpa--vegetarian-thukpa","tag":"veg","img":"thukpa--vegetarian-thukpa.jpg"},{"name":"Egg Thukpa","portion":"300 gr","price":35,"ro":"Ou, Tăiței, Roșii, Ardei verde, Ghimbir, Usturoi, Ceapă, Morcov, Sos de soia, Mazăre, Condimente","en":"Egg, Noodles, Tomato, Green pepper, Ginger, Garlic, Onion, Carrot, Soy sauce, Peas, Spices","slug":"thukpa--egg-thukpa","tag":"egg","img":"thukpa--egg-thukpa.jpg"},{"name":"Chicken Thukpa","portion":"300 gr","price":38,"ro":"Pulpă de pui, Ou, Tăiței, Roșii, Ardei verde, Ghimbir, Usturoi, Ceapă, Morcov, Sos de soia, Mazăre, Condimente","en":"Chicken thigh, Egg, Noodles, Tomato, Green pepper, Ginger, Garlic, Onion, Carrot, Soy sauce, Peas, Spices","slug":"thukpa--chicken-thukpa","tag":"meat","img":"thukpa--chicken-thukpa.jpg"},{"name":"Pork Thukpa","portion":"300 gr","price":40,"ro":"Porc, Ou, Tăiței, Roșii, Ardei verde, Ghimbir, Usturoi, Ceapă, Morcov, Sos de soia, Mazăre, Condimente","en":"Pork, Egg, Noodles, Tomato, Green pepper, Ginger, Garlic, Onion, Carrot, Soy sauce, Peas, Spices","slug":"thukpa--pork-thukpa","tag":"meat"},{"name":"Mixed Thukpa","portion":"300 gr","price":43,"ro":"Pui, Porc, Ou, Tăiței, Roșii, Ardei verde, Ghimbir, Usturoi, Ceapă, Morcov, Sos de soia, Mazăre, Condimente","en":"Chicken, Pork, Egg, Noodles, Tomato, Green pepper, Ginger, Garlic, Onion, Carrot, Soy sauce, Peas, Spices","slug":"thukpa--mixed-thukpa","tag":"meat"}],"id":"thukpa"},{"title":"Chicken Mo:Mo","subtitle":"Găluște nepaleze cu pui","items":[{"name":"Steam Mo:Mo","portion":"250 gr","price":35,"ro":"Găluște cu pui gătite la abur, Achar de roșii cu susan","en":"Steamed chicken dumplings, Tomato–sesame achar","slug":"chicken-mo-mo--steam-mo-mo","tag":"meat","img":"chicken-mo-mo--steam-mo-mo.jpg"},{"name":"Fry Mo:Mo","portion":"250 gr","price":40,"ro":"Găluște cu pui prăjite crocant, Achar de roșii cu susan","en":"Crispy fried chicken dumplings, Tomato–sesame achar","slug":"chicken-mo-mo--fry-mo-mo","tag":"meat","img":"chicken-mo-mo--fry-mo-mo.jpg"},{"name":"Kothey Mo:Mo","portion":"250 gr","price":38,"ro":"Găluște cu pui rumenite în tigaie, garnisite cu Unt, Usturoi și Coriandru verde, Achar","en":"Pan-fried chicken dumplings, finished with Butter, Garlic and Fresh coriander, Achar","slug":"chicken-mo-mo--kothey-mo-mo","tag":"meat"},{"name":"Soup Mo:Mo","portion":"350 gr","price":42,"ro":"Găluște cu pui în supă (jhol) de roșii cu susan și condimente","en":"Dumplings in a spiced tomato–sesame broth (jhol)","slug":"chicken-mo-mo--soup-mo-mo","tag":"meat"},{"name":"Chilli Mo:Mo","portion":"300 gr","price":45,"ro":"Găluște cu pui sotate cu Ardei gras, Ceapă, Sos de soia, Sos chilli","en":"Dumplings tossed with Bell pepper, Onion, Soy sauce, Chilli sauce","slug":"chicken-mo-mo--chilli-mo-mo","tag":"meat"}],"id":"chicken-mo-mo"},{"title":"Pork Mo:Mo","subtitle":"Găluște nepaleze cu porc","items":[{"name":"Steam Mo:Mo","portion":"250 gr","price":38,"ro":"Găluște cu porc gătite la abur, Achar de roșii cu susan","en":"Steamed pork dumplings, Tomato–sesame achar","slug":"pork-mo-mo--steam-mo-mo","tag":"meat","img":"pork-mo-mo--steam-mo-mo.jpg"},{"name":"Fry Mo:Mo","portion":"250 gr","price":42,"ro":"Găluște cu porc prăjite crocant, Achar de roșii cu susan","en":"Crispy fried pork dumplings, Tomato–sesame achar","slug":"pork-mo-mo--fry-mo-mo","tag":"meat"},{"name":"Kothey Mo:Mo","portion":"250 gr","price":40,"ro":"Găluște cu porc rumenite în tigaie, garnisite cu Unt, Usturoi și Coriandru verde, Achar","en":"Pan-fried pork dumplings, finished with Butter, Garlic and Fresh coriander, Achar","slug":"pork-mo-mo--kothey-mo-mo","tag":"meat","img":"pork-mo-mo--kothey-mo-mo.jpg"},{"name":"Soup Mo:Mo","portion":"350 gr","price":45,"ro":"Găluște cu porc în supă (jhol) de roșii cu susan și condimente","en":"Dumplings in a spiced tomato–sesame broth (jhol)","slug":"pork-mo-mo--soup-mo-mo","tag":"meat","img":"pork-mo-mo--soup-mo-mo.jpg"},{"name":"Chilli Mo:Mo","portion":"300 gr","price":48,"ro":"Găluște cu porc sotate cu Ardei gras, Ceapă, Sos de soia, Sos chilli","en":"Dumplings tossed with Bell pepper, Onion, Soy sauce, Chilli sauce","slug":"pork-mo-mo--chilli-mo-mo","tag":"meat"}],"id":"pork-mo-mo"},{"title":"Chowmein & Noodles","subtitle":"Tăiței prăjiți în stil nepalez · Nepali stir-fried noodles","items":[{"name":"Vegetarian Chowmein","portion":"300 gr","price":30,"ro":"Tăiței, Morcov, Ceapă, Ardei gras, Varză, Condimente","en":"Noodles, Carrot, Onion, Bell pepper, Cabbage, Spices","group":"CHOWMEIN","slug":"chowmein-noodles--vegetarian-chowmein","tag":"veg","img":"chowmein-noodles--vegetarian-chowmein.jpg"},{"name":"Egg Chowmein","portion":"300 gr","price":35,"ro":"Ou, Tăiței, Morcov, Ceapă, Ardei gras, Varză, Condimente","en":"Egg, Noodles, Carrot, Onion, Bell pepper, Cabbage, Spices","group":"CHOWMEIN","slug":"chowmein-noodles--egg-chowmein","tag":"egg"},{"name":"Chicken Chowmein","portion":"300 gr","price":38,"ro":"Pulpă de pui, Ou, Tăiței, Morcov, Ceapă, Ardei gras, Varză, Condimente","en":"Chicken thigh, Egg, Noodles, Carrot, Onion, Bell pepper, Cabbage, Spices","group":"CHOWMEIN","slug":"chowmein-noodles--chicken-chowmein","tag":"meat","img":"chowmein-noodles--chicken-chowmein.jpg"},{"name":"Pork Chowmein","portion":"300 gr","price":40,"ro":"Pulpă de porc, Ou, Tăiței, Morcov, Ceapă, Ardei gras, Varză, Condimente","en":"Pork, Egg, Noodles, Carrot, Onion, Bell pepper, Cabbage, Spices","group":"CHOWMEIN","slug":"chowmein-noodles--pork-chowmein","tag":"meat"},{"name":"Mixed Chowmein","portion":"300 gr","price":45,"ro":"Pui, Porc, Ou, Tăiței, Morcov, Ceapă, Ardei gras, Varză, Condimente","en":"Chicken, Pork, Egg, Noodles, Carrot, Onion, Bell pepper, Cabbage, Spices","group":"CHOWMEIN","slug":"chowmein-noodles--mixed-chowmein","tag":"meat"},{"name":"Chicken Keema Noodles","price":40,"ro":"Tăiței, Carne tocată de pui, Ceapă, Ardei gras, Varză, Sos de soia, Condimente","en":"Noodles, Minced chicken, Onion, Bell pepper, Cabbage, Soy sauce, Spices","group":"KEEMA NOODLES · TĂIȚEI CU CARNE TOCATĂ","slug":"chowmein-noodles--chicken-keema-noodles","tag":"meat"},{"name":"Pork Keema Noodles","price":44,"ro":"Tăiței, Carne tocată de porc, Ceapă, Ardei gras, Varză, Sos de soia, Condimente","en":"Noodles, Minced pork, Onion, Bell pepper, Cabbage, Soy sauce, Spices","group":"KEEMA NOODLES · TĂIȚEI CU CARNE TOCATĂ","slug":"chowmein-noodles--pork-keema-noodles","tag":"meat"}],"id":"chowmein-noodles"},{"title":"Chicken","subtitle":"Preparate cu pui · Chicken curries","items":[{"name":"Chicken Curry","portion":"350 gr","price":40,"ro":"Piept de pui, Ceapă, Unt, Roșii, Masala","en":"Chicken breast, Onion, Butter, Tomato, Masala","slug":"chicken--chicken-curry","tag":"meat","img":"chicken--chicken-curry.jpg"},{"name":"Butter Chicken","portion":"350 gr","price":46,"ro":"Pulpă de pui, Caju, Smântână, Unt, Roșii, Condimente","en":"Chicken thigh, Cashew, Cream, Butter, Tomato, Spices","slug":"chicken--butter-chicken","tag":"meat","img":"chicken--butter-chicken.jpg"},{"name":"Chicken Kadai","portion":"350 gr","price":45,"ro":"Pulpă de pui, Ardei gras, Ceapă, Smântână, Unt, Roșii, Masala","en":"Chicken thigh, Bell pepper, Onion, Cream, Butter, Tomato, Masala","slug":"chicken--chicken-kadai","tag":"meat"},{"name":"Chicken Palak","portion":"350 gr","price":46,"ro":"Pulpă de pui, Spanac, Ceapă, Usturoi, Smântână, Unt, Masala, Condimente","en":"Chicken thigh, Spinach, Onion, Garlic, Cream, Butter, Masala, Spices","slug":"chicken--chicken-palak","tag":"meat","img":"chicken--chicken-palak.jpg"},{"name":"Chicken Madras","portion":"350 gr","price":45,"ro":"Pulpă de pui, Sos de caju, Ceapă, Smântână, Unt, Roșii, Usturoi, Condimente","en":"Chicken thigh, Cashew sauce, Onion, Cream, Butter, Tomato, Garlic, Spices","slug":"chicken--chicken-madras","tag":"meat"}],"id":"chicken"},{"title":"Lamb/Mutton","subtitle":"Preparate cu miel/capră · Lamb/Mutton dishes","items":[{"name":"Lamb/Mutton Curry","portion":"350 gr","price":52,"ro":"Carne de miel/capră, Ceapă, Roșii, Pastă de usturoi și ceapă, Masala","en":"Lamb/Mutton, Onion, Tomato, Garlic & onion paste, Masala","slug":"lamb-mutton--lamb-mutton-curry","tag":"meat","img":"lamb-mutton--lamb-mutton-curry.jpg"},{"name":"Lamb/Mutton Kadai","portion":"350 gr","price":56,"ro":"Pulpă de miel/capră, Ardei gras, Ceapă, Sos de roșii, Smântână, Unt, Usturoi, Masala","en":"Lamb/Mutton, Bell pepper, Onion, Tomato sauce, Cream, Butter, Garlic, Masala","slug":"lamb-mutton--lamb-mutton-kadai","tag":"meat","img":"lamb-mutton--lamb-mutton-kadai.jpg"},{"name":"Lamb/Mutton Palak","portion":"350 gr","price":58,"ro":"Pulpă de miel/capră, Spanac, Ceapă, Usturoi, Smântână, Unt, Masala, Condimente","en":"Lamb/Mutton, Spinach, Onion, Garlic, Cream, Butter, Masala, Spices","slug":"lamb-mutton--lamb-mutton-palak","tag":"meat"},{"name":"Lamb/Mutton Taas Set","price":60,"ro":"Carne de miel/capră marinată cu usturoi, ghimbir, ardei iute și condimente, prăjită în ulei de muștar, servită cu orez expandat, ceapă și ardei verde","en":"Lamb/Mutton marinated with garlic, ginger, chilli and spices, fried in mustard oil, served with puffed rice (bhuja), onion and green chilli","slug":"lamb-mutton--lamb-mutton-taas-set","tag":"meat"},{"name":"Lamb/Mutton Choila","price":60,"ro":"Miel/Capră la grătar, Ulei de muștar, Piper timur, Usturoi, Ghimbir, Ardei iute, Ceapă verde","en":"Grilled lamb/mutton, Mustard oil, Timur pepper, Garlic, Ginger, Chilli, Spring onion","slug":"lamb-mutton--lamb-mutton-choila","tag":"meat","img":"lamb-mutton--lamb-mutton-choila.jpg"}],"id":"lamb-mutton"},{"title":"Vegetarian","subtitle":"Preparate vegetariene","items":[{"name":"Mix Veg Curry","portion":"350 gr","price":36,"ro":"Morcov, Ardei gras, Conopidă, Fasole verde, Ceapă, Masala","en":"Carrot, Bell pepper, Cauliflower, Green beans, Onion, Masala","slug":"vegetarian--mix-veg-curry","tag":"veg","img":"vegetarian--mix-veg-curry.jpg"},{"name":"Aloo Matar","portion":"350 gr","price":30,"ro":"Cartofi, Mazăre, Smântână, Unt, Ceapă, Roșii, Usturoi, Masala","en":"Potato, Peas, Cream, Butter, Onion, Tomato, Garlic, Masala","slug":"vegetarian--aloo-matar","tag":"veg"},{"name":"Daal Makhani","portion":"350 gr","price":35,"ro":"Linte neagră, Smântână, Ceapă, Ghimbir, Usturoi, Roșii, Unt, Condimente","en":"Black lentils, Cream, Onion, Ginger, Garlic, Tomato, Butter, Spices","slug":"vegetarian--daal-makhani","tag":"veg"},{"name":"Rajma Curry","portion":"350 gr","price":30,"ro":"Fasole roșie, Ceapă, Ghimbir, Usturoi, Roșii, Condimente","en":"Red kidney beans, Onion, Ginger, Garlic, Tomato, Spices","slug":"vegetarian--rajma-curry","tag":"veg","img":"vegetarian--rajma-curry.jpg"},{"name":"Jeera Aloo","price":25,"ro":"Cartofi, Semințe de chimion, Ghimbir, Ardei iute, Coriandru verde, Condimente","en":"Potato, Cumin seeds, Ginger, Chilli, Fresh coriander, Spices","slug":"vegetarian--jeera-aloo","tag":"veg"},{"name":"Palak","price":30,"ro":"Spanac, Ceapă, Usturoi, Ghimbir, Condimente","en":"Spinach, Onion, Garlic, Ginger, Spices","slug":"vegetarian--palak","tag":"veg"},{"name":"Aloo Palak","price":30,"ro":"Cartofi, Spanac, Ceapă, Usturoi, Ghimbir, Condimente","en":"Potato, Spinach, Onion, Garlic, Ginger, Spices","slug":"vegetarian--aloo-palak","tag":"veg"},{"name":"Palak Paneer","price":40,"ro":"Spanac, Brânză proaspătă (paneer), Ceapă, Usturoi, Ghimbir, Condimente","en":"Spinach, Fresh cheese (paneer), Onion, Garlic, Ginger, Spices","slug":"vegetarian--palak-paneer","tag":"veg","img":"vegetarian--palak-paneer.jpg"}],"id":"vegetarian"},{"title":"Biryani","subtitle":"Orez basmati aromat, gătit cu condimente","items":[{"name":"Vegetarian Biryani","portion":"350 gr","price":40,"ro":"Orez basmati, Legume, Iaurt, Unt, Masala, Condimente","en":"Basmati rice, Vegetables, Yogurt, Butter, Masala, Spices","slug":"biryani--vegetarian-biryani","tag":"veg","img":"biryani--vegetarian-biryani.jpg"},{"name":"Chicken Biryani","portion":"350 gr","price":46,"ro":"Pulpă de pui, Orez basmati, Iaurt, Unt, Masala, Condimente","en":"Chicken thigh, Basmati rice, Yogurt, Butter, Masala, Spices","slug":"biryani--chicken-biryani","tag":"meat","img":"biryani--chicken-biryani.jpg"},{"name":"Lamb/Mutton Biryani","portion":"350 gr","price":53,"ro":"Pulpă de miel/capră, Orez basmati, Iaurt, Unt, Masala, Condimente","en":"Lamb/Mutton, Basmati rice, Yogurt, Butter, Masala, Spices","slug":"biryani--lamb-mutton-biryani","tag":"meat"},{"name":"Pork Biryani","portion":"350 gr","price":50,"ro":"Porc, Orez basmati, Iaurt, Unt, Masala, Condimente","en":"Pork, Basmati rice, Yogurt, Butter, Masala, Spices","slug":"biryani--pork-biryani","tag":"meat"}],"id":"biryani"},{"title":"Snacks · Veg","subtitle":"Gustări vegetariene","items":[{"name":"Finger Chips","portion":"150 gr","price":15,"ro":"Cartofi prăjiți, Sare","en":"Fried potato fingers, Salt","slug":"snacks-veg--finger-chips","tag":"veg","img":"snacks-veg--finger-chips.jpg"},{"name":"Chips Chilly","portion":"150 gr","price":23,"ro":"Cartofi prăjiți sotați cu Ardei gras, Ceapă, Sos de soia, Sos chilli","en":"Fried potatoes tossed with Bell pepper, Onion, Soy sauce, Chilli sauce","slug":"snacks-veg--chips-chilly","tag":"veg"},{"name":"Crispy Potato","portion":"150 gr","price":25,"ro":"Cartofi preparați crocanți și crănțănitori, Condimente","en":"Potatoes prepared crispy and crunchy, Spices","slug":"snacks-veg--crispy-potato","tag":"veg"},{"name":"Aloo Thicheko","portion":"150 gr","price":28,"ro":"Cartofi striviți, Ulei de muștar, Usturoi, Ghimbir, Piper timur, Ardei iute, Chaat masala, Sare neagră, Coriandru verde, Ceapă verde","en":"Smashed potatoes, Mustard oil, Garlic, Ginger, Timur pepper, Chilli, Chaat masala, Black salt, Fresh coriander, Spring onion","slug":"snacks-veg--aloo-thicheko","tag":"veg"},{"name":"Peanut Sadheko","portion":"120 gr","price":25,"ro":"Arahide, Ceapă, Roșii, Ardei iute, Coriandru verde, Lămâie, Ulei de muștar, Piper timur","en":"Peanuts, Onion, Tomato, Chilli, Fresh coriander, Lemon, Mustard oil, Timur pepper","slug":"snacks-veg--peanut-sadheko","tag":"veg","img":"snacks-veg--peanut-sadheko.jpg"},{"name":"Bhatmas Sadheko","portion":"120 gr","price":25,"ro":"Boabe de soia prăjite, Ceapă, Roșii, Ardei iute, Coriandru verde, Lămâie, Ulei de muștar, Piper timur","en":"Roasted soybeans, Onion, Tomato, Chilli, Fresh coriander, Lemon, Mustard oil, Timur pepper","slug":"snacks-veg--bhatmas-sadheko","tag":"veg"},{"name":"Wai Wai Sadheko","portion":"120 gr","price":18,"ro":"Tăiței Wai Wai crocanți, Ceapă, Roșii, Ardei iute, Coriandru verde, Lămâie, Ulei de muștar, Piper timur","en":"Crunchy Wai Wai noodles, Onion, Tomato, Chilli, Fresh coriander, Lemon, Mustard oil, Timur pepper","slug":"snacks-veg--wai-wai-sadheko","tag":"veg"},{"name":"Mushroom Chilly","portion":"150 gr","price":25,"ro":"Ciuperci, Ardei gras, Ceapă, Usturoi, Sos de soia, Sos chilli","en":"Mushrooms, Bell pepper, Onion, Garlic, Soy sauce, Chilli sauce","slug":"snacks-veg--mushroom-chilly","tag":"veg"}],"id":"snacks-veg"},{"title":"Snacks · Non-Veg","subtitle":"Gustări cu carne","items":[{"name":"Chicken Fry","portion":"150 gr","price":30,"ro":"Pui marinat în condimente, prăjit","en":"Spice-marinated fried chicken","slug":"snacks-non-veg--chicken-fry","tag":"meat","img":"snacks-non-veg--chicken-fry.jpg"},{"name":"Chicken Chilly","portion":"150 gr","price":37,"ro":"Bucăți de pui crocante sotate cu Ardei gras, Ceapă, Usturoi, Sos de soia, Sos chilli","en":"Crispy chicken pieces tossed with Bell pepper, Onion, Garlic, Soy sauce, Chilli sauce","slug":"snacks-non-veg--chicken-chilly","tag":"meat","img":"snacks-non-veg--chicken-chilly.jpg"},{"name":"Chicken Drumstick","portion":"150 gr","price":42,"ro":"Pulpe inferioare de pui marinate în condimente, prăjite","en":"Spice-marinated chicken drumsticks, fried","slug":"snacks-non-veg--chicken-drumstick","tag":"meat"},{"name":"Chicken Lollipop","portion":"150 gr","price":40,"ro":"Aripioare de pui modelate, marinate și prăjite, Sos picant","en":"Shaped chicken wings, marinated and fried, Spicy dip","slug":"snacks-non-veg--chicken-lollipop","tag":"meat"},{"name":"Chicken Leg Pieces","portion":"2 buc / pcs","price":40,"ro":"Bucăți de pulpă de pui marinate în condimente, prăjite","en":"Spice-marinated chicken leg pieces, fried","slug":"snacks-non-veg--chicken-leg-pieces","tag":"meat"},{"name":"Chicken Wings","portion":"150 gr","price":40,"ro":"Aripioare de pui marinate, prăjite crocant","en":"Marinated chicken wings, fried crispy","slug":"snacks-non-veg--chicken-wings","tag":"meat","img":"snacks-non-veg--chicken-wings.jpg"},{"name":"Crispy Chicken","portion":"150 gr","price":40,"ro":"Fâșii de piept de pui pane, prăjite crocant","en":"Breaded chicken breast strips, fried crispy","slug":"snacks-non-veg--crispy-chicken","tag":"meat","img":"snacks-non-veg--crispy-chicken.jpg"},{"name":"Chicken Sadheko","portion":"150 gr","price":40,"ro":"Pui la grătar, Ceapă, Roșii, Ardei iute, Coriandru verde, Lămâie, Ulei de muștar, Piper timur","en":"Grilled chicken, Onion, Tomato, Chilli, Fresh coriander, Lemon, Mustard oil, Timur pepper","slug":"snacks-non-veg--chicken-sadheko","tag":"meat"},{"name":"Chicken Choila","portion":"150 gr","price":40,"ro":"Pui la grătar, Ulei de muștar, Piper timur, Usturoi, Ghimbir, Ardei iute, Ceapă verde","en":"Grilled chicken, Mustard oil, Timur pepper, Garlic, Ginger, Chilli, Spring onion","slug":"snacks-non-veg--chicken-choila","tag":"meat"},{"name":"Pork Fry","portion":"150 gr","price":35,"ro":"Porc marinat în condimente, prăjit","en":"Spice-marinated fried pork","slug":"snacks-non-veg--pork-fry","tag":"meat","img":"snacks-non-veg--pork-fry.jpg"},{"name":"Pork Choila","portion":"150 gr","price":42,"ro":"Porc la grătar, Ulei de muștar, Piper timur, Usturoi, Ghimbir, Ardei iute, Ceapă verde","en":"Grilled pork, Mustard oil, Timur pepper, Garlic, Ginger, Chilli, Spring onion","slug":"snacks-non-veg--pork-choila","tag":"meat","img":"snacks-non-veg--pork-choila.jpg"}],"id":"snacks-non-veg"},{"title":"Sausages","subtitle":"Cârnați · Sausages","items":[{"name":"Chicken Sausage Fry","portion":"100 gr","price":28,"ro":"Cârnați de pui prăjiți, Ceapă, Ardei gras","en":"Fried chicken sausages, Onion, Bell pepper","slug":"sausages--chicken-sausage-fry","tag":"meat","img":"sausages--chicken-sausage-fry.jpg"},{"name":"Chicken Sausage Chilly","portion":"120 gr","price":35,"ro":"Cârnați de pui sotați cu Ardei gras, Ceapă, Usturoi, Sos de soia, Sos chilli","en":"Chicken sausages tossed with Bell pepper, Onion, Garlic, Soy sauce, Chilli sauce","slug":"sausages--chicken-sausage-chilly","tag":"meat","img":"sausages--chicken-sausage-chilly.jpg"},{"name":"Pork Sausage Fry","price":30,"ro":"Cârnați de porc prăjiți, Ceapă, Ardei gras","en":"Fried pork sausages, Onion, Bell pepper","slug":"sausages--pork-sausage-fry","tag":"meat"},{"name":"Pork Sausage Chilly","price":36,"ro":"Cârnați de porc sotați cu Ardei gras, Ceapă, Usturoi, Sos de soia, Sos chilli","en":"Pork sausages tossed with Bell pepper, Onion, Garlic, Soy sauce, Chilli sauce","slug":"sausages--pork-sausage-chilly","tag":"meat"},{"name":"Vegetarian Sausage Fry","price":25,"ro":"Cârnați vegetarieni prăjiți, Ceapă, Ardei gras","en":"Fried vegetarian sausages, Onion, Bell pepper","slug":"sausages--vegetarian-sausage-fry","tag":"veg"},{"name":"Vegetarian Sausage Chilly","price":30,"ro":"Cârnați vegetarieni sotați cu Ardei gras, Ceapă, Usturoi, Sos de soia, Sos chilli","en":"Vegetarian sausages tossed with Bell pepper, Onion, Garlic, Soy sauce, Chilli sauce","slug":"sausages--vegetarian-sausage-chilly","tag":"veg"}],"id":"sausages"},{"title":"Taas","subtitle":"Carne prăjită în stil nepalez (Chitwan) · Nepali fried meat","items":[{"name":"Chicken Taas","portion":"250 gr","price":40,"ro":"Carne de pui marinată cu usturoi, ghimbir, ardei iute și condimente, prăjită în ulei de muștar, servită cu orez expandat (bhuja), ceapă și ardei verde","en":"Chicken marinated with garlic, ginger, chilli and spices, fried in mustard oil, served with puffed rice (bhuja), onion and green chilli","slug":"taas--chicken-taas","tag":"meat"},{"name":"Pork Taas","portion":"250 gr","price":48,"ro":"Carne de porc marinată cu usturoi, ghimbir, ardei iute și condimente, prăjită în ulei de muștar, servită cu orez expandat (bhuja), ceapă și ardei verde","en":"Pork marinated with garlic, ginger, chilli and spices, fried in mustard oil, served with puffed rice (bhuja), onion and green chilli","slug":"taas--pork-taas","tag":"meat","img":"taas--pork-taas.jpg"},{"name":"Lamb/Mutton Taas","portion":"250 gr","price":55,"ro":"Carne de miel/capră marinată cu usturoi, ghimbir, ardei iute și condimente, prăjită în ulei de muștar, servită cu orez expandat, ceapă și ardei verde","en":"Lamb/Mutton marinated with garlic, ginger, chilli and spices, fried in mustard oil, served with puffed rice (bhuja), onion and green chilli","slug":"taas--lamb-mutton-taas","tag":"meat","img":"taas--lamb-mutton-taas.jpg"},{"name":"Buff Taas","price":60,"ro":"Carne de bivol marinată cu usturoi, ghimbir, ardei iute și condimente, prăjită în ulei de muștar, servită cu orez expandat (bhuja), ceapă și ardei verde","en":"Buffalo meat marinated with garlic, ginger, chilli and spices, fried in mustard oil, served with puffed rice (bhuja), onion and green chilli","slug":"taas--buff-taas","tag":"meat"}],"id":"taas"},{"title":"Fried Rice","subtitle":"Orez prăjit","items":[{"name":"Veg Fried Rice","portion":"300 gr","price":33,"ro":"Orez basmati, Morcov, Mazăre, Ceapă, Ceapă verde, Sos de soia, Condimente","en":"Basmati rice, Carrot, Peas, Onion, Spring onion, Soy sauce, Spices","slug":"fried-rice--veg-fried-rice","tag":"veg","img":"fried-rice--veg-fried-rice.jpg"},{"name":"Egg Fried Rice","portion":"300 gr","price":35,"ro":"Ou, Orez basmati, Morcov, Mazăre, Ceapă, Ceapă verde, Sos de soia, Condimente","en":"Egg, Basmati rice, Carrot, Peas, Onion, Spring onion, Soy sauce, Spices","slug":"fried-rice--egg-fried-rice","tag":"egg","img":"fried-rice--egg-fried-rice.jpg"},{"name":"Chicken Fried Rice","portion":"300 gr","price":38,"ro":"Pui, Ou, Orez basmati, Morcov, Mazăre, Ceapă, Ceapă verde, Sos de soia, Condimente","en":"Chicken, Egg, Basmati rice, Carrot, Peas, Onion, Spring onion, Soy sauce, Spices","slug":"fried-rice--chicken-fried-rice","tag":"meat"},{"name":"Pork Fried Rice","portion":"300 gr","price":40,"ro":"Porc, Ou, Orez basmati, Morcov, Mazăre, Ceapă, Ceapă verde, Sos de soia, Condimente","en":"Pork, Egg, Basmati rice, Carrot, Peas, Onion, Spring onion, Soy sauce, Spices","slug":"fried-rice--pork-fried-rice","tag":"meat","img":"fried-rice--pork-fried-rice.jpg"},{"name":"Mixed Fried Rice","portion":"300 gr","price":45,"ro":"Pui, Porc, Ou, Orez basmati, Morcov, Mazăre, Ceapă, Ceapă verde, Sos de soia, Condimente","en":"Chicken, Pork, Egg, Basmati rice, Carrot, Peas, Onion, Spring onion, Soy sauce, Spices","slug":"fried-rice--mixed-fried-rice","tag":"meat"}],"id":"fried-rice"},{"title":"Khana Set","subtitle":"Set de masă nepalez · Dal Bhat","items":[{"name":"Vegetarian Khana Set","portion":"450 gr","price":40,"ro":"Supă de linte, Curry de legume, Orez basmati, Murături (achar), Papadums, Condimente","en":"Lentil soup, Vegetable curry, Basmati rice, Pickles (achar), Papadums, Spices","slug":"khana-set--vegetarian-khana-set","tag":"veg","img":"khana-set--vegetarian-khana-set.jpg"},{"name":"Egg Khana Set","price":42,"ro":"Supă de linte, Curry de ouă, Curry de legume, Orez basmati, Murături (achar), Papadums","en":"Lentil soup, Egg curry, Vegetable curry, Basmati rice, Pickles (achar), Papadums","slug":"khana-set--egg-khana-set","tag":"egg"},{"name":"Chicken Khana Set","portion":"450 gr","price":45,"ro":"Supă de linte, Curry de pui, Curry de legume, Orez basmati, Murături (achar), Papadums","en":"Lentil soup, Chicken curry, Vegetable curry, Basmati rice, Pickles (achar), Papadums","slug":"khana-set--chicken-khana-set","tag":"meat","img":"khana-set--chicken-khana-set.jpg"},{"name":"Pork Khana Set","portion":"450 gr","price":50,"ro":"Supă de linte, Curry de porc, Curry de legume, Orez basmati, Murături (achar), Papadums","en":"Lentil soup, Pork curry, Vegetable curry, Basmati rice, Pickles (achar), Papadums","slug":"khana-set--pork-khana-set","tag":"meat"},{"name":"Fish Khana Set","price":52,"ro":"Supă de linte, Curry de pește, Curry de legume, Orez basmati, Murături (achar), Papadums","en":"Lentil soup, Fish curry, Vegetable curry, Basmati rice, Pickles (achar), Papadums","slug":"khana-set--fish-khana-set","tag":"meat"},{"name":"Lamb/Mutton Khana Set","portion":"450 gr","price":60,"ro":"Supă de linte, Curry de miel/capră, Curry de legume, Orez basmati, Murături (achar), Papadums","en":"Lentil soup, Lamb/Mutton curry, Vegetable curry, Basmati rice, Pickles (achar), Papadums","slug":"khana-set--lamb-mutton-khana-set","tag":"meat"}],"id":"khana-set"},{"title":"Khaja & Dhido Set","subtitle":"Seturi nepaleze tradiționale · Traditional Nepali sets","items":[{"name":"Vegetarian Khaja Set","price":35,"ro":"Orez expandat, Fulgi de orez (chiura), Cartofi, Arahide și caju, Condimente","en":"Puffed rice, Beaten rice (chiura), Potato, Peanuts & cashews, Spices","group":"KHAJA SET · SET DE GUSTĂRI NEPALEZE","slug":"khaja-dhido-set--vegetarian-khaja-set","tag":"veg","img":"khaja-dhido-set--vegetarian-khaja-set.jpg"},{"name":"Chicken Khaja Set","portion":"300 gr","price":40,"ro":"Pulpă de pui, Orez expandat, Fulgi de orez (chiura), Cartofi, Arahide și caju, Condimente","en":"Chicken thigh, Puffed rice, Beaten rice (chiura), Potato, Peanuts & cashews, Spices","group":"KHAJA SET · SET DE GUSTĂRI NEPALEZE","slug":"khaja-dhido-set--chicken-khaja-set","tag":"meat","img":"khaja-dhido-set--chicken-khaja-set.jpg"},{"name":"Pork Khaja Set","portion":"300 gr","price":45,"ro":"Pulpă de porc, Orez expandat, Fulgi de orez (chiura), Cartofi, Arahide și caju, Condimente","en":"Pork, Puffed rice, Beaten rice (chiura), Potato, Peanuts & cashews, Spices","group":"KHAJA SET · SET DE GUSTĂRI NEPALEZE","slug":"khaja-dhido-set--pork-khaja-set","tag":"meat","img":"khaja-dhido-set--pork-khaja-set.jpg"},{"name":"Lamb/Mutton Khaja Set","portion":"300 gr","price":55,"ro":"Pulpă de miel/capră, Orez expandat, Fulgi de orez (chiura), Cartofi, Arahide și caju, Condimente","en":"Lamb/Mutton, Puffed rice, Beaten rice (chiura), Potato, Peanuts & cashews, Spices","group":"KHAJA SET · SET DE GUSTĂRI NEPALEZE","slug":"khaja-dhido-set--lamb-mutton-khaja-set","tag":"meat"},{"name":"Chicken Dhido Set","price":45,"ro":"Dhido (terci nepalez din făină), Supă de linte, Curry de pui, Murături (achar)","en":"Dhido (Nepali flour porridge), Lentil soup, Chicken curry, Pickles (achar)","group":"DHIDO SET · TERCI NEPALEZ TRADIȚIONAL","slug":"khaja-dhido-set--chicken-dhido-set","tag":"meat","img":"khaja-dhido-set--chicken-dhido-set.jpg"},{"name":"Pork Dhido Set","price":50,"ro":"Dhido (terci nepalez din făină), Supă de linte, Curry de porc, Murături (achar)","en":"Dhido (Nepali flour porridge), Lentil soup, Pork curry, Pickles (achar)","group":"DHIDO SET · TERCI NEPALEZ TRADIȚIONAL","slug":"khaja-dhido-set--pork-dhido-set","tag":"meat","img":"khaja-dhido-set--pork-dhido-set.jpg"},{"name":"Lamb/Mutton Dhido Set","price":60,"ro":"Dhido (terci nepalez din făină), Supă de linte, Curry de miel/capră, Murături (achar)","en":"Dhido (Nepali flour porridge), Lentil soup, Lamb/Mutton curry, Pickles (achar)","group":"DHIDO SET · TERCI NEPALEZ TRADIȚIONAL","slug":"khaja-dhido-set--lamb-mutton-dhido-set","tag":"meat"}],"id":"khaja-dhido-set"},{"title":"Rice","subtitle":"Orez · Rice","items":[{"name":"Plain Rice","portion":"150 gr","price":18,"ro":"Orez basmati","en":"Basmati rice","slug":"rice--plain-rice","tag":"veg"},{"name":"Pilau Rice","portion":"150 gr","price":23,"ro":"Orez basmati, Turmeric (curcuma)","en":"Basmati rice, Turmeric","slug":"rice--pilau-rice","tag":"veg","img":"rice--pilau-rice.jpg"},{"name":"Jeera Rice","portion":"150 gr","price":25,"ro":"Orez basmati, Semințe de chimion","en":"Basmati rice, Cumin seeds","slug":"rice--jeera-rice","tag":"veg","img":"rice--jeera-rice.jpg"},{"name":"Vegetable Pilau","portion":"150 gr","price":25,"ro":"Orez basmati, Turmeric (curcuma), Legume","en":"Basmati rice, Turmeric, Vegetables","slug":"rice--vegetable-pilau","tag":"veg","img":"rice--vegetable-pilau.jpg"},{"name":"Matar Pilau","portion":"150 gr","price":25,"ro":"Orez basmati, Turmeric (curcuma), Mazăre","en":"Basmati rice, Turmeric, Peas","slug":"rice--matar-pilau","tag":"veg","img":"rice--matar-pilau.jpg"}],"id":"rice"},{"title":"Roti, Naan & Paratha","subtitle":"Pâine indiană · Indian breads","items":[{"name":"Plain Roti","portion":"2 buc / pcs","price":15,"ro":"Lipie din făină integrală de grâu (aata), coaptă pe tava încinsă","en":"Whole-wheat flatbread (aata), cooked on a hot griddle","slug":"roti-naan-paratha--plain-roti","tag":"veg"},{"name":"Puri","price":6,"ro":"Lipii mici din făină integrală de grâu, prăjite până se umflă","en":"Small whole-wheat breads, deep-fried until puffed","slug":"roti-naan-paratha--puri","tag":"veg"},{"name":"Plain Paratha","portion":"2 buc / pcs","price":20,"ro":"Lipie stratificată din făină integrală de grâu, rumenită cu unt (ghee)","en":"Layered whole-wheat flatbread, pan-fried with butter (ghee)","slug":"roti-naan-paratha--plain-paratha","tag":"veg"},{"name":"Aloo Paratha","portion":"2 buc / pcs","price":25,"ro":"Lipie din făină integrală de grâu umplută cu cartofi condimentați, rumenită cu unt (ghee)","en":"Whole-wheat flatbread stuffed with spiced potato, pan-fried with butter (ghee)","slug":"roti-naan-paratha--aloo-paratha","tag":"veg","img":"roti-naan-paratha--aloo-paratha.jpg"},{"name":"Aloo Gobi Paratha","portion":"2 buc / pcs","price":25,"ro":"Lipie din făină integrală de grâu umplută cu cartofi și conopidă condimentate, rumenită cu unt (ghee)","en":"Whole-wheat flatbread stuffed with spiced potato and cauliflower, pan-fried with butter (ghee)","slug":"roti-naan-paratha--aloo-gobi-paratha","tag":"veg"},{"name":"Plain Naan","portion":"1 buc / pcs","price":15,"ro":"Pâine indiană din făină albă, coaptă la cuptor","en":"Indian white-flour bread, oven-baked","slug":"roti-naan-paratha--plain-naan","tag":"veg"},{"name":"Butter Naan","portion":"1 buc / pcs","price":18,"ro":"Pâine naan unsă cu unt","en":"Naan brushed with butter","slug":"roti-naan-paratha--butter-naan","tag":"veg"},{"name":"Garlic Naan","portion":"1 buc / pcs","price":20,"ro":"Pâine naan cu usturoi","en":"Naan with garlic","slug":"roti-naan-paratha--garlic-naan","tag":"veg","img":"roti-naan-paratha--garlic-naan.jpg"}],"id":"roti-naan-paratha"},{"title":"Sweets & Desserts","subtitle":"Dulciuri și deserturi indiene","items":[{"name":"Rasmalai","portion":"2 buc / porție","price":15,"ro":"Bilute de brânză moale în lapte îndulcit cu cardamom și fistic","en":"Soft cheese dumplings in sweet cardamom milk with pistachio","slug":"sweets-desserts--rasmalai","tag":"veg","img":"sweets-desserts--rasmalai.jpg"},{"name":"Rasgulla","portion":"2 buc / porție","price":12,"ro":"Bilute de brânză moale în sirop ușor de zahăr","en":"Soft cheese balls in light sugar syrup","slug":"sweets-desserts--rasgulla","tag":"veg"},{"name":"Gulab Jamun","portion":"2 buc / porție","price":15,"ro":"Gogoșele din lapte prăjite, în sirop cu cardamom","en":"Fried milk dumplings in cardamom syrup","slug":"sweets-desserts--gulab-jamun","tag":"veg","img":"sweets-desserts--gulab-jamun.jpg"},{"name":"Soan Papdi","portion":"2 buc / porție","price":10,"ro":"Desert fulgios din făină de năut, zahăr, ghee și cardamom","en":"Flaky sweet of gram flour, sugar, ghee and cardamom","slug":"sweets-desserts--soan-papdi","tag":"veg"},{"name":"Khir","price":20,"ro":"Budincă de orez fiartă în lapte, cu zahăr și cardamom","en":"Rice pudding slow-cooked in milk with sugar and cardamom","slug":"sweets-desserts--khir","tag":"veg","img":"sweets-desserts--khir.jpg"}],"id":"sweets-desserts"},{"title":"Tea & Coffee","subtitle":"Ceai și cafea","items":[{"name":"Espresso","price":9,"group":"COFFEE · CAFEA","slug":"tea-coffee--espresso","tag":"veg"},{"name":"Double Espresso","price":18,"group":"COFFEE · CAFEA","slug":"tea-coffee--double-espresso","tag":"veg"},{"name":"Americano","price":12,"group":"COFFEE · CAFEA","slug":"tea-coffee--americano","tag":"veg"},{"name":"Ristretto","price":10,"group":"COFFEE · CAFEA","slug":"tea-coffee--ristretto","tag":"veg"},{"name":"Lungo","price":10,"group":"COFFEE · CAFEA","slug":"tea-coffee--lungo","tag":"veg"},{"name":"Espresso Macchiato","price":13,"group":"COFFEE · CAFEA","slug":"tea-coffee--espresso-macchiato","tag":"veg"},{"name":"Latte Macchiato","price":15,"group":"COFFEE · CAFEA","slug":"tea-coffee--latte-macchiato","tag":"veg"},{"name":"Caffè Latte","price":15,"group":"COFFEE · CAFEA","slug":"tea-coffee--caffe-latte","tag":"veg"},{"name":"Flat White","price":15,"group":"COFFEE · CAFEA","slug":"tea-coffee--flat-white","tag":"veg"},{"name":"Milk Tea","price":10,"group":"TEA · CEAI","slug":"tea-coffee--milk-tea-ceai-cu-lapte","nameRo":"Ceai cu lapte","tag":"veg"},{"name":"Black Tea","price":7,"group":"TEA · CEAI","slug":"tea-coffee--black-tea-ceai-negru","nameRo":"Ceai negru","tag":"veg"},{"name":"Hot Lemon","price":8,"group":"TEA · CEAI","slug":"tea-coffee--hot-lemon-lamaie-calda","nameRo":"Lămâie caldă","tag":"veg"},{"name":"Hot Lemon with Honey","price":10,"group":"TEA · CEAI","slug":"tea-coffee--hot-lemon-with-honey-lamaie-calda-cu-miere","nameRo":"Lămâie caldă cu miere","tag":"veg"}],"id":"tea-coffee"},{"title":"Water & Soft Drinks","subtitle":"Apă și răcoritoare","items":[{"name":"Water (Aqua)","portion":"500 ml","price":10,"group":"WATER · APĂ","slug":"water-soft-drinks--water-aqua","tag":"veg"},{"name":"Water (Aqua)","portion":"750 ml","price":12,"group":"WATER · APĂ","slug":"water-soft-drinks--water-aqua-750-ml","tag":"veg"},{"name":"Water (Aqua)","portion":"1L","price":15,"group":"WATER · APĂ","slug":"water-soft-drinks--water-aqua-1l","tag":"veg"},{"name":"Borsec","portion":"500 ml","price":10,"group":"WATER · APĂ","slug":"water-soft-drinks--borsec","tag":"veg"},{"name":"Borsec","portion":"1L","price":15,"group":"WATER · APĂ","slug":"water-soft-drinks--borsec-1l","tag":"veg"},{"name":"Coca-Cola","portion":"330 ml","price":10,"group":"SOFT DRINKS · RĂCORITOARE","slug":"water-soft-drinks--coca-cola","tag":"veg"},{"name":"Coca-Cola Zero","portion":"330 ml","price":10,"group":"SOFT DRINKS · RĂCORITOARE","slug":"water-soft-drinks--coca-cola-zero","tag":"veg"},{"name":"Fanta","portion":"330 ml","price":10,"group":"SOFT DRINKS · RĂCORITOARE","slug":"water-soft-drinks--fanta","tag":"veg"},{"name":"Mountain Dew","portion":"250 ml","price":10,"group":"SOFT DRINKS · RĂCORITOARE","slug":"water-soft-drinks--mountain-dew","tag":"veg"},{"name":"Hell","portion":"250 ml","price":10,"group":"ENERGY DRINKS · BĂUTURI ENERGIZANTE","slug":"water-soft-drinks--hell","tag":"veg"},{"name":"Red Bull","portion":"250 ml","price":15,"group":"ENERGY DRINKS · BĂUTURI ENERGIZANTE","slug":"water-soft-drinks--red-bull","tag":"veg"}],"id":"water-soft-drinks"},{"title":"Beer & Wine","subtitle":"Bere și vin","items":[{"name":"Tuborg","portion":"330 ml","price":12,"group":"BEER · BERE","slug":"beer-wine--tuborg","tag":"veg"},{"name":"Tuborg","portion":"500 ml","price":14,"group":"BEER · BERE","slug":"beer-wine--tuborg-500-ml","tag":"veg"},{"name":"Ursus","portion":"500 ml","price":14,"group":"BEER · BERE","slug":"beer-wine--ursus","tag":"veg"},{"name":"Heineken","portion":"330 ml","price":12,"group":"BEER · BERE","slug":"beer-wine--heineken","tag":"veg"},{"name":"Heineken","portion":"500 ml","price":15,"group":"BEER · BERE","slug":"beer-wine--heineken-500-ml","tag":"veg"},{"name":"Sherpa (Taste of Nepal)","portion":"330 ml","price":16,"group":"BEER · BERE","slug":"beer-wine--sherpa-taste-of-nepal","tag":"veg"},{"name":"Corona","portion":"330 ml","price":12,"group":"BEER · BERE","slug":"beer-wine--corona","tag":"veg"},{"name":"Purcari White","portion":"750 ml","price":140,"group":"WINE · VIN (PURCARI)","slug":"beer-wine--purcari-white-alb","nameRo":"Purcari Alb","tag":"veg"},{"name":"Purcari Red","portion":"750 ml","price":140,"group":"WINE · VIN (PURCARI)","slug":"beer-wine--purcari-red-rosu","nameRo":"Purcari Roșu","tag":"veg"},{"name":"Purcari Rosé","portion":"750 ml","price":140,"group":"WINE · VIN (PURCARI)","slug":"beer-wine--purcari-rose","nameRo":"Purcari Rosé","tag":"veg"}],"id":"beer-wine"},{"title":"Spirits","subtitle":"Băuturi spirtoase · Spirits & liqueurs","items":[],"id":"spirits","table":{"cols":[{"en":"30 ml","ro":"30 ml"},{"en":"60 ml","ro":"60 ml"},{"en":"90 ml","ro":"90 ml"},{"en":"½ bottle","ro":"½ sticlă"},{"en":"Bottle","ro":"Sticlă"}],"groups":[{"name":"WHISKY","rows":[["Johnnie Walker Red Label",25,45,65,175,350],["Jack Daniel's",25,45,65,175,350],["Johnnie Walker Black Label",30,50,65,200,400],["Chivas",30,55,80,200,400],["Jameson",20,35,55,125,250],["Ballantine's",20,35,55,125,250],["J&B",20,35,55,125,250]]},{"name":"VODKA · RUM · LIQUEURS","rows":[["Absolut Vodka",15,25,40,100,200],["Bacardi White Rum",20,35,55,125,250],["Bacardi Red Rum",20,35,55,125,250],["Baileys",20,35,55,125,250],["Tequila · 1 shot",20,null,null,null,null]]}]}}]</script>
+<script>
+(function(){
+"use strict";
+var DATA = JSON.parse(document.getElementById('menu-data').textContent);
+var T = {
+  ro:{search:'Caută în meniu…', all:'Toate', veg:'Vegetarian', egg:'Cu ou', meat:'Cu carne',
+      none:'Nicio potrivire', none2:'Încearcă alt cuvânt sau șterge filtrele.', lei:'lei', item:'Produs'},
+  en:{search:'Search the menu…', all:'All', veg:'Vegetarian', egg:'Egg', meat:'Meat',
+      none:'No matches', none2:'Try another word or clear the filters.', lei:'lei', item:'Item'}
+};
+var lang = 'ro', diet = 'all', query = '';
+try{ lang = localStorage.getItem('fewa-lang') || 'ro'; }catch(e){}
+
+var qEl = document.getElementById('q');
+var main = document.getElementById('main');
+var searchWrap = document.getElementById('searchWrap');
+
+function norm(s){ return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+// so that "momo" finds "Mo:Mo" and "chow mein" finds "Chowmein"
+function key(s){ return norm(s).replace(/[^a-z0-9]+/g,''); }
+function hit(hay, nq, kq){
+  if(!hay) return false;
+  if(norm(hay).indexOf(nq) !== -1) return true;
+  return kq.length > 2 && key(hay).indexOf(kq) !== -1;
+}
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+function hl(s){
+  s = String(s==null?'':s);
+  if(!query) return esc(s);
+  var n = norm(s), nq = norm(query), out = '', i = 0, p;
+  if(!nq) return esc(s);
+  while((p = n.indexOf(nq, i)) !== -1){
+    out += esc(s.slice(i,p)) + '<mark>' + esc(s.slice(p, p+nq.length)) + '</mark>';
+    i = p + nq.length;
+  }
+  return out + esc(s.slice(i));
+}
+function itemName(it){ return (lang === 'ro' && it.nameRo) ? it.nameRo : it.name; }
+function itemDesc(it){ return lang === 'ro' ? (it.ro || '') : (it.en || ''); }
+function matches(it, secHit){
+  if(diet !== 'all' && it.tag !== diet) return false;
+  if(!query || secHit) return true;
+  var nq = norm(query), kq = key(query);
+  return hit(itemName(it), nq, kq) || hit(it.name, nq, kq)
+      || hit(itemDesc(it), nq, kq) || hit(it.portion, nq, kq)
+      || hit(it.group, nq, kq);
+}
+
+function renderItem(it){
+  var portion = it.portion ? ' <span class="portion">' + esc(it.portion) + '</span>' : '';
+  var d = itemDesc(it);
+  var lead = it.img
+    ? '<button class="thumb" type="button" data-t="' + esc(it.tag) + '" data-img="' + esc(it.slug)
+      + '" aria-label="' + esc(itemName(it)) + '">'
+      + '<img src="images/' + esc(it.img) + '" alt="" loading="lazy" decoding="async"></button>'
+    : '<span class="tagdot" data-t="' + esc(it.tag) + '" aria-hidden="true"></span>';
+  return '<article class="item' + (it.img ? ' has-img' : '') + '"><div class="item-top">'
+    + lead
+    + '<h3 class="item-name">' + hl(itemName(it)) + portion + '</h3>'
+    + '<span class="price">' + it.price + '<small>' + T[lang].lei + '</small></span>'
+    + '</div>' + (d ? '<p class="desc">' + hl(d) + '</p>' : '') + '</article>';
+}
+
+function renderTable(sec, secHit){
+  if(diet === 'veg' || diet === 'egg') return '';
+  var nq = norm(query), kq = key(query);
+  var cols = sec.table.cols.map(function(c){ return '<th>' + esc(c[lang]) + '</th>'; }).join('');
+  var body = sec.table.groups.map(function(g){
+    var rows = g.rows.filter(function(r){ return !nq || secHit || hit(r[0], nq, kq) || hit(g.name, nq, kq); });
+    if(!rows.length) return '';
+    return '<tr class="grouprow"><td colspan="6">' + esc(g.name) + '</td></tr>'
+      + rows.map(function(r){
+          return '<tr><td>' + hl(r[0]) + '</td>' + r.slice(1).map(function(v){
+            return '<td>' + (v == null ? '—' : v + ' ' + T[lang].lei) + '</td>';
+          }).join('') + '</tr>';
+        }).join('');
+  }).join('');
+  if(!body) return '';
+  return '<div class="tablewrap"><table><thead><tr><th>' + esc(T[lang].item) + '</th>'
+    + cols + '</tr></thead><tbody>' + body + '</tbody></table></div>';
+}
+
+function render(){
+  var html = '', visible = [];
+  var nq = norm(query), kq = key(query);
+  DATA.forEach(function(sec){
+    var inner = '';
+    // typing a whole category ("dal bhat", "bere", "deserturi") opens that section
+    var secHit = !!query && (hit(sec.title, nq, kq) || hit(sec.subtitle, nq, kq));
+    if(sec.table){
+      inner = renderTable(sec, secHit);
+    } else {
+      var hits = sec.items.filter(function(it){ return matches(it, secHit); });
+      if(hits.length){
+        var lastGroup = null, buf = '';
+        hits.forEach(function(it){
+          if(it.group && it.group !== lastGroup){
+            if(buf){ inner += '<div class="list">' + buf + '</div>'; buf = ''; }
+            inner += '<div class="group">' + esc(it.group) + '</div>';
+            lastGroup = it.group;
+          }
+          buf += renderItem(it);
+        });
+        if(buf) inner += '<div class="list">' + buf + '</div>';
+      }
+    }
+    if(!inner) return;
+    visible.push(sec);
+    html += '<section class="sec" id="' + esc(sec.id) + '">'
+      + '<div class="sec-head"><h2>' + esc(sec.title) + '</h2>'
+      + (sec.subtitle ? '<p>' + esc(sec.subtitle) + '</p>' : '')
+      + '<div class="rule"><i></i><b></b><i></i></div></div>'
+      + inner + '</section>';
+  });
+  main.innerHTML = html || '<div class="empty"><strong>' + T[lang].none + '</strong>' + T[lang].none2 + '</div>';
+  document.getElementById('navChips').innerHTML = visible.map(function(s){
+    return '<button class="chip" type="button" data-go="' + esc(s.id) + '">' + esc(s.title) + '</button>';
+  }).join('');
+  observe();
+}
+
+function renderDiet(){
+  var opts = ['all','veg','egg','meat'];
+  document.getElementById('dietChips').innerHTML = opts.map(function(k){
+    return '<button class="chip" type="button" data-diet="' + k + '" aria-pressed="' + (diet === k) + '">'
+      + (k === 'all' ? '' : '<span class="dot"></span>') + T[lang][k] + '</button>';
+  }).join('');
+}
+
+var io = null;
+function observe(){
+  if(io) io.disconnect();
+  var chips = [].slice.call(document.querySelectorAll('[data-go]'));
+  if(!chips.length || !('IntersectionObserver' in window)) return;
+  io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      chips.forEach(function(c){
+        var on = c.dataset.go === e.target.id;
+        if(on !== c.classList.contains('on')){
+          c.classList.toggle('on', on);
+          if(on) c.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+        }
+      });
+    });
+  }, {rootMargin:'-156px 0px -68% 0px', threshold:0});
+  document.querySelectorAll('.sec').forEach(function(s){ io.observe(s); });
+}
+
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.getElementById('lang').innerHTML = (lang === 'ro')
+    ? '<b>RO</b><i>·</i><s>EN</s>' : '<s>RO</s><i>·</i><b>EN</b>';
+  qEl.placeholder = T[lang].search;
+  document.querySelectorAll('[data-ro]').forEach(function(el){
+    el.innerHTML = (lang === 'ro') ? el.dataset.ro : el.dataset.en;
+  });
+  renderDiet();
+  render();
+}
+
+var SUN = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2M12 19.4v2M2.6 12h2M19.4 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/>';
+var MOON = '<path d="M20.5 14.8A8.4 8.4 0 0 1 9.2 3.5 8.6 8.6 0 1 0 20.5 14.8Z"/>';
+function curTheme(){
+  var t = document.documentElement.getAttribute('data-theme');
+  if(t) return t;
+  return (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+}
+function paintTheme(){ document.getElementById('themeIcon').innerHTML = curTheme() === 'dark' ? SUN : MOON; }
+try{ var st = localStorage.getItem('fewa-theme'); if(st) document.documentElement.setAttribute('data-theme', st); }catch(e){}
+paintTheme();
+
+document.getElementById('theme').addEventListener('click', function(){
+  var next = curTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try{ localStorage.setItem('fewa-theme', next); }catch(e){}
+  paintTheme();
+});
+document.getElementById('lang').addEventListener('click', function(){
+  lang = (lang === 'ro') ? 'en' : 'ro';
+  try{ localStorage.setItem('fewa-lang', lang); }catch(e){}
+  applyLang();
+});
+var tmr;
+qEl.addEventListener('input', function(){
+  searchWrap.classList.toggle('has', !!qEl.value);
+  clearTimeout(tmr);
+  tmr = setTimeout(function(){ query = qEl.value.trim(); render(); }, 110);
+});
+document.getElementById('clr').addEventListener('click', function(){
+  qEl.value = ''; query = ''; searchWrap.classList.remove('has'); render(); qEl.focus();
+});
+document.getElementById('dietChips').addEventListener('click', function(e){
+  var b = e.target.closest('[data-diet]');
+  if(!b) return;
+  diet = b.dataset.diet; renderDiet(); render();
+});
+document.getElementById('navChips').addEventListener('click', function(e){
+  var b = e.target.closest('[data-go]');
+  if(!b) return;
+  var el = document.getElementById(b.dataset.go);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+});
+/* photo preview */
+var BY_SLUG = {};
+DATA.forEach(function(s){ (s.items||[]).forEach(function(it){ BY_SLUG[it.slug] = it; }); });
+var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg');
+var lastFocus = null;
+
+function openLb(slug){
+  var it = BY_SLUG[slug];
+  if(!it || !it.img) return;
+  lastFocus = document.activeElement;
+  lbImg.src = 'images/' + it.img;
+  lbImg.alt = itemName(it);
+  document.getElementById('lbName').textContent = itemName(it);
+  document.getElementById('lbPortion').textContent = it.portion || '';
+  document.getElementById('lbPrice').textContent = it.price + ' ' + T[lang].lei;
+  document.getElementById('lbDesc').textContent = itemDesc(it);
+  lb.classList.add('open');
+  document.body.classList.add('lb-on');
+  document.getElementById('lbClose').focus();
+}
+function closeLb(){
+  lb.classList.remove('open');
+  document.body.classList.remove('lb-on');
+  lbImg.removeAttribute('src');
+  if(lastFocus && lastFocus.focus) lastFocus.focus();
+}
+main.addEventListener('click', function(e){
+  var t = e.target.closest('.thumb');
+  if(t) openLb(t.dataset.img);
+});
+document.getElementById('lbClose').addEventListener('click', closeLb);
+lb.addEventListener('click', function(e){ if(e.target === lb || e.target.closest('.lb-img') === null && e.target.closest('.lb-cap') === null) closeLb(); });
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && lb.classList.contains('open')) closeLb(); });
+
+var topBtn = document.getElementById('top');
+topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+window.addEventListener('scroll', function(){ topBtn.classList.toggle('show', window.scrollY > 700); }, {passive:true});
+
+applyLang();
+})();
+</script>
+</body>
+</html>
